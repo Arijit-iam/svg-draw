@@ -21,25 +21,13 @@
         </div>
     </div>
     <div style="height: 100vh;"></div>
-    <div style="height: 100vh; background-color: #6e6e6e;" class="content">
+    <div style="height: 80vh; background-color: #6e6e6e;" class="content">
         <div class="svg-container" style="height: 100%;">
-            <!-- <svg viewBox="0 0 870 850" fill="none" style="height: 100%;">
+            <svg height="100%" viewBox="0 0 410 465" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path class="svgPath"
-                    d="M30.5 56V309C30.5 339 48.5 399 120.5 399H772C802.667 399.333 864 418.2 864 491C866.667 521.667 852 583 772 583H327C300.333 582 247 596.6 247 663C247 729.4 300.333 744 327 743H615C635.333 743 676 755.2 676 804V849.5"
-                    stroke="white" stroke-width="10" />
-                <circle cx="30.5" cy="30.5" r="30.5" fill="white" class="svgDot" />
-            </svg> -->
-
-            <!-- <svg width="403" height="461" viewBox="0 0 403 461" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="svgDot" d="M5 460.5C6.33333 394.5 17.4 254.2 51 221C53.6667 208.833 69.2 177.6 110 150C117 103.833 151 10.3 231 5.5V135.5H288.5C298 136.167 318.4 142.9 324 164.5C330 187.167 345.9 235.5 361.5 247.5C363.667 255.833 373.6 271 396 265C392.667 287.833 381.1 338.1 361.5 356.5C342.333 368.833 296.7 391 267.5 381C255 381.333 228 383.7 220 390.5V460.5" stroke="white" stroke-width="10"/>
-                </svg> -->
-
-                <svg height="100%" viewBox="0 0 410 465" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="svgPath" d="M6.49994 464.5C3.33327 414.5 7.49994 298.5 49.4999 234.5C48.8333 229.5 61.2 204.4 116 144C118.667 105.333 144.7 23.8 227.5 7V133.5H278.5C296.333 135.5 331.3 146.7 328.5 175.5C338.167 205.333 366.8 265 404 265C402.5 302.833 383.9 378.3 321.5 377.5C293.833 377 237.4 377.2 233 382C227.833 381.833 218.3 386.6 221.5 407V463.5" stroke="white" stroke-width="10"/>
-                    </svg>
-                    
-                
-
+                    d="M6.49994 464.5C3.33327 414.5 7.49994 298.5 49.4999 234.5C48.8333 229.5 61.2 204.4 116 144C118.667 105.333 144.7 23.8 227.5 7V133.5H278.5C296.333 135.5 331.3 146.7 328.5 175.5C338.167 205.333 366.8 265 404 265C402.5 302.833 383.9 378.3 321.5 377.5C293.833 377 237.4 377.2 233 382C227.833 381.833 218.3 386.6 221.5 407V463.5"
+                    stroke="white" stroke-width="8" />
+            </svg>
         </div>
     </div>
     <div style="height: 100vh;"></div>
@@ -56,9 +44,6 @@
             // document start
             // gsap.registerPlugin(DrawSVGPlugin)
 
-            // let tl_pre,
-            //     homeloader = document.getElementById("homepreloader");
-            //if (typeof (homeloader) != 'undefined' && homeloader != null) {
             document.querySelectorAll("svg").forEach(function (each_cur_el, index) {
                 tl_pre = new gsap.timeline();
                 let svgDot = each_cur_el.querySelector('.svgDot'),
@@ -69,17 +54,18 @@
                 cur_el.style.strokeDasharray = length + 1;
                 cur_el.style.strokeDashoffset = length + 1;
                 cur_el.style.opacity = 1;
+
                 tl_pre.from(svgDot, {
                     scale: 0,
                     ease: 'none',
                     // ease: "Power3.easeOut",
                 })
                     .to(cur_el, 2, {
-                        // delay: 1.2,
                         duration: 25,
                         strokeDashoffset: 0,
                         ease: 'none',
-                    })
+                    });
+
                 ScrollTrigger.create({
                     trigger: each_cur_el,
                     start: "top 80%",
@@ -87,8 +73,7 @@
                     animation: tl_pre,
                     // toggleActions: "play none none none",
                     scrub: 1.2,
-                    // each: 0.5,
-                    markers: true,
+                    // markers: true,
                 })
             });
 
