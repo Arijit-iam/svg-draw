@@ -5,29 +5,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SVG Draw</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .pin-sec {
+            height: 100vh;
+        }
+
+        .accrdn-cntnt {
+            display: none;
+        }
+
+        .rotate-div {
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            position: relative;
+            transition: all 0.4s ease-in-out;
+        }
+
+        .rotate-div .each-rotate-child {
+            position: absolute;
+            transform-origin: center;
+        }
+        .rotate-div .each-rotate-child .each-rotate-child-in {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-size: 18px;
+            transform-origin: center;
+            transition: all 0.4s ease-in-out;
+        }
+        .rotate-div .each-rotate-child h2 {
+            font-size: 14px;
+            color: #000;
+        }
+
+        .rotate-div .each-rotate-child.pos1 {
+            top: 50%;
+            right: 0%;
+            transform: translate(50%, -50%);
+        }
+
+        .rotate-div .each-rotate-child.pos2 {
+            top: 0;
+            left: 0%;
+            transform: translate(50%, -23%);
+        }
+
+        .rotate-div .each-rotate-child.pos3 {
+            bottom: 0;
+            left: 0%;
+            transform: translate(50%, 23%);
+        }
+        .each-accrdn-elem {
+            border: 1px solid #eee;
+            border-radius: 15px;
+            margin-bottom: 15px;
+        }
+
+        .accrdn-title {
+            font-size: 18px;
+            padding: 15px 15px;
+        }
+        .accrdn-cntnt {
+            padding: 0 15px 20px;
+        }
+    </style>
 </head>
 
 <body style="background-color: #2C2C2C;">
     <div style="height: 100vh;"></div>
-    <div style="height: 100vh; background-color: #6e6e6e;" class="content">
-        <div class="svg-container" style="height: 100%;">
-            <svg viewBox="0 0 870 850" fill="none" style="height: 100%;">
-                <path class="svgPath"
-                    d="M30.5 56V309C30.5 339 48.5 399 120.5 399H772C802.667 399.333 864 418.2 864 491C866.667 521.667 852 583 772 583H327C300.333 582 247 596.6 247 663C247 729.4 300.333 744 327 743H615C635.333 743 676 755.2 676 804V849.5"
-                    stroke="white" stroke-width="10" />
-                <circle cx="30.5" cy="30.5" r="30.5" fill="white" class="svgDot" />
-            </svg>
-
-        </div>
-    </div>
-    <div style="height: 100vh;"></div>
-    <div style="height: 80vh; background-color: #6e6e6e;" class="content">
-        <div class="svg-container" style="height: 100%;">
-            <svg height="100%" viewBox="0 0 410 465" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path class="svgPath"
-                    d="M6.49994 464.5C3.33327 414.5 7.49994 298.5 49.4999 234.5C48.8333 229.5 61.2 204.4 116 144C118.667 105.333 144.7 23.8 227.5 7V133.5H278.5C296.333 135.5 331.3 146.7 328.5 175.5C338.167 205.333 366.8 265 404 265C402.5 302.833 383.9 378.3 321.5 377.5C293.833 377 237.4 377.2 233 382C227.833 381.833 218.3 386.6 221.5 407V463.5"
-                    stroke="white" stroke-width="8" />
-            </svg>
+    <div class="pin-sec">
+        <div class="pin-sec-in" style="color: #fff; padding: 50px 0;">
+            <div class="container">
+                <div class="row pin-row" style="align-items: center;">
+                    <div class="pin-lft-col col-md-6">
+                        <div class="rotate-div-wpr">
+                            <div class="rotate-div">
+                                <div class="each-rotate-child pos1">
+                                    <div class="each-rotate-child-in">
+                                        <h2>child 1</h2>
+                                    </div>
+                                </div>
+                                <div class="each-rotate-child pos2">
+                                    <div class="each-rotate-child-in">
+                                        <h2>child 2</h2>
+                                    </div>
+                                </div>
+                                <div class="each-rotate-child pos3">
+                                    <div class="each-rotate-child-in">
+                                        <h2>child 3</h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fff"></div>
+                        </div>
+                    </div>
+                    <div class="pin-rht-col col-md-6">
+                        <div class="accrdn-wpr">
+                            <div class="cmn-accrd">
+                                <div class="each-accrdn-elem">
+                                    <h3 class="accrdn-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Iure nesciunt eveniet
+                                        odio.
+                                    </h3>
+                                    <div class="accrdn-cntnt">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum eligendi
+                                            officia
+                                            pariatur sequi perferendis numquam, aut odio blanditiis, suscipit hic ea
+                                            voluptates tempore debitis quisquam consequatur. Ex maiores doloribus,
+                                            voluptas
+                                            dolorem aliquam ratione consectetur incidunt nisi, repellat corrupti, cum
+                                            voluptatum modi asperiores explicabo perspiciatis debitis fuga ipsum? Sit,
+                                            quisquam consequatur?
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="each-accrdn-elem">
+                                    <h3 class="accrdn-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Iure nesciunt eveniet
+                                        odio.
+                                    </h3>
+                                    <div class="accrdn-cntnt">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum eligendi
+                                            officia
+                                            pariatur sequi perferendis numquam, aut odio blanditiis, suscipit hic ea
+                                            voluptates tempore debitis quisquam consequatur. Ex maiores doloribus,
+                                            voluptas
+                                            dolorem aliquam ratione consectetur incidunt nisi, repellat corrupti, cum
+                                            voluptatum modi asperiores explicabo perspiciatis debitis fuga ipsum? Sit,
+                                            quisquam consequatur?
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="each-accrdn-elem">
+                                    <h3 class="accrdn-title">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                        Iure nesciunt eveniet
+                                        odio.
+                                    </h3>
+                                    <div class="accrdn-cntnt">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rerum eligendi
+                                            officia
+                                            pariatur sequi perferendis numquam, aut odio blanditiis, suscipit hic ea
+                                            voluptates tempore debitis quisquam consequatur. Ex maiores doloribus,
+                                            voluptas
+                                            dolorem aliquam ratione consectetur incidunt nisi, repellat corrupti, cum
+                                            voluptatum modi asperiores explicabo perspiciatis debitis fuga ipsum? Sit,
+                                            quisquam consequatur?
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div style="height: 100vh;"></div>
@@ -37,45 +178,149 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"
         crossorigin="anonymous"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js" crossorigin="anonymous"></script>
-    <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js?r=11"></script> -->
+<script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/DrawSVGPlugin.js?r=11"></script> -->
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         jQuery(document).ready(function ($) {
             // document start
+
+
+            // if ($('.cmn-accrdn-wpr').length) {
+            //     $('.cmn-accrdn-wpr').each(() => {
+            //         $(this).find('.each-faq:nth-child(1)').find('.accrd-hdr').addClass('active');
+            //         $(this).find('.each-faq:nth-child(1)').find('.accrdn-cntnt').show();
+            //     })
+            // }
+
+            $('.accrdn-title').on('click', function () {
+                $(this).toggleClass('active');
+                $(this).next('.accrdn-cntnt').stop(true, true).slideToggle();
+                $(this).parents().siblings().find('.accrdn-cntnt').slideUp();
+                $(this).parents().siblings().find('.accrdn-title').removeClass('active');
+            })
             // gsap.registerPlugin(DrawSVGPlugin)
 
-            document.querySelectorAll("svg").forEach(function (each_cur_el, index) {
-                tl_pre = new gsap.timeline();
-                let svgDot = each_cur_el.querySelector('.svgDot'),
-                    cur_el = each_cur_el.querySelector('.svgPath'),
-                    length = cur_el.getTotalLength();
-                console.log(svgDot);
-                console.log(length);
-                cur_el.style.strokeDasharray = length + 1;
-                cur_el.style.strokeDashoffset = length + 1;
-                cur_el.style.opacity = 1;
 
-                tl_pre.from(svgDot, {
-                    scale: 0,
-                    ease: 'none',
-                    // ease: "Power3.easeOut",
+            let newTl = new gsap.timeline();
+            // gsap
+            const accrdnItem = document.querySelectorAll('.each-accrdn-elem');
+            const rotateDiv = document.querySelector('.rotate-div');
+            const rotateItem = document.querySelectorAll('.each-rotate-child');
+            // let activeFunc = (currentElemIndex)=>{
+            //     document.querySelectorAll('.each-accrdn-elem').forEach((currentTitle,index)=>{
+            //         if(currentElemIndex==index){
+            //             currentTitle.querySelector('.accrdn-title').classList.add('active')
+            //         }else{
+            //             currentTitle.querySelector('.accrdn-title').classList.remove('active')
+            //         }
+            //     })
+            // }
+            let activeFunc = (rotateDeg)=>{
+                document.querySelectorAll('.each-rotate-child').forEach((currentTitle,index)=>{
+                    currentTitle.querySelector('.each-rotate-child-in').style.transform="rotate(-"+rotateDeg+"deg)";
                 })
-                    .to(cur_el, 2, {
-                        duration: 25,
-                        strokeDashoffset: 0,
-                        ease: 'none',
-                    });
+            }
+            accrdnItem.forEach((elem, index) => {
+                let eachTitle = elem.querySelector('.accrdn-title')
+                let eachRotateItem = rotateItem[index];
+                // let eachRotateItemIn = eachRotateItem.querySelector('.eachRotateItem');
+                let rotateDeg = (360/rotateItem.length)*index;
+                newTl.to(eachTitle, {
+                    onStart() {
+                        //console.log(this.targets()[0]); // <= the current target
+                        // activeFunc(index);
+                        // eachTitle.classList.add("active");
+                        eachTitle.click();
+                        eachRotateItem.classList.add("active");
+                        activeFunc(rotateDeg);
+                        // eachRotateItem.querySelector('.each-rotate-child-in').style.transform="rotate(-"+rotateDeg+"deg)";
+                        rotateDiv.style.transform="rotate("+rotateDeg+"deg)";
 
-                ScrollTrigger.create({
-                    trigger: each_cur_el,
-                    start: "top 80%",
-                    end: "bottom 75%",
-                    animation: tl_pre,
-                    // toggleActions: "play none none none",
-                    scrub: 1.2,
-                    // markers: true,
+                    },
+                    onComplete() {
+                        //console.log(this.targets()[0]); // <= the current target
+                        // activeFunc(index);
+                        eachRotateItem.classList.remove("active");
+                        // eachTitle.classList.remove("active");
+                    },
+                    onEnterBack(){
+                    }
+
                 })
-            });
+            })
+            newTl.pause()
+            ScrollTrigger.create({
+                trigger: ".pin-sec",
+                start: "top 0%",
+                end: "+=300%",
+                pin: true,
+                animation: newTl,
+                // toggleActions: "play none none none",
+                scrub: 1.2,
+                // markers: true,
+            })
+            // ScrollTrigger.create({
+            //     trigger: ".pin-sec",
+            //     start: "top 0%",
+            //     end: "+=300%",
+            //     pin: true,
+            //     animation: newTl,
+            //     // toggleActions: "play none none none",
+            //     scrub: 1.2,
+            //     // markers: true,
+            // })
+
+            // ScrollTrigger.create({
+            //     trigger: locaiSec,
+            //     start: "top top",
+            //     end: "+=" + window.innerHeight * (allRow.length - 1),
+            //     pin: true,
+            //     invalidateOnRefresh: true,
+            //     // markers: true,
+            // });
+            // ScrollTrigger.create({
+            //     trigger: locaiSec,
+            //     start: "top 10%",
+            //     end: "+=" + window.innerHeight * (allRow.length - 1),
+            //     invalidateOnRefresh: true,
+            //     animation: caioTl,
+            //     scrub: 1.5,
+            //     // markers: true,
+            // });
+
+
+            // document.querySelectorAll("svg").forEach(function (each_cur_el, index) {
+            //     let svgDot = each_cur_el.querySelector('.svgDot'),
+            //         cur_el = each_cur_el.querySelector('.svgPath'),
+            //         length = cur_el.getTotalLength();
+            //     console.log(svgDot);
+            //     console.log(length);
+            //     cur_el.style.strokeDasharray = length + 1;
+            //     cur_el.style.strokeDashoffset = length + 1;
+            //     cur_el.style.opacity = 1;
+
+            //     tl_pre.from(svgDot, {
+            //         scale: 0,
+            //         ease: 'none',
+            //         // ease: "Power3.easeOut",
+            //     })
+            //         .to(cur_el, 2, {
+            //             duration: 25,
+            //             strokeDashoffset: 0,
+            //             ease: 'none',
+            //         });
+
+            //     ScrollTrigger.create({
+            //         trigger: each_cur_el,
+            //         start: "top 80%",
+            //         end: "bottom 75%",
+            //         animation: tl_pre,
+            //         // toggleActions: "play none none none",
+            //         scrub: 1.2,
+            //         // markers: true,
+            //     })
+            // });
 
         });
     </script>
